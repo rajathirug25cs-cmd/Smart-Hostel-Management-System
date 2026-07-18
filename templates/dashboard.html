@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Smart Hostel Dashboard</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+</head>
+
+
+<body class="bg-light">
+
+
+<nav class="navbar navbar-dark bg-primary">
+
+<div class="container">
+
+<span class="navbar-brand">
+Smart Hostel Management System
+</span>
+
+
+<a href="/logout" class="btn btn-danger">
+Logout
+</a>
+
+
+</div>
+
+</nav>
+
+
+
+<div class="container mt-5">
+
+
+<div class="card shadow p-4">
+
+
+<h2 class="text-center">
+Welcome {{user}}
+</h2>
+
+
+<hr>
+
+
+
+<div class="row g-3">
+
+
+
+<!-- Common -->
+
+<div class="col-md-4">
+
+<div class="card p-3 text-center shadow-sm">
+
+<h4>Mess Menu</h4>
+
+<a href="/menu" class="btn btn-primary">
+View Menu
+</a>
+
+</div>
+
+</div>
+
+
+
+
+
+<!-- Student Section -->
+
+{% if user == "student" %}
+
+
+
+<div class="col-md-4">
+
+<div class="card p-3 text-center shadow-sm">
+
+<h4>Complaint</h4>
+
+<a href="/complaint" class="btn btn-warning">
+Register Complaint
+</a>
+
+</div>
+
+</div>
+
+
+
+<div class="col-md-4">
+
+<div class="card p-3 text-center shadow-sm">
+
+<h4>Room Details</h4>
+
+<a href="/my_room" class="btn btn-success">
+My Room
+</a>
+
+</div>
+
+</div>
+
+
+
+{% endif %}
+
+
+
+
+
+<!-- Admin Section -->
+
+{% if user == "admin" %}
+
+
+
+<div class="col-md-4">
+
+<div class="card p-3 text-center shadow-sm">
+
+<h4>Add Menu</h4>
+
+<a href="/add_menu" class="btn btn-primary">
+Add Menu
+</a>
+
+</div>
+
+</div>
+
+
+
+<div class="col-md-4">
+
+<div class="card p-3 text-center shadow-sm">
+
+<h4>Complaints</h4>
+
+<a href="/view_complaints" class="btn btn-danger">
+View Complaints
+</a>
+
+</div>
+
+</div>
+
+
+
+
+<div class="col-md-4">
+
+<div class="card p-3 text-center shadow-sm">
+
+<h4>Students</h4>
+
+<a href="/students" class="btn btn-success">
+View Students
+</a>
+
+</div>
+
+</div>
+
+
+
+
+<div class="col-md-4">
+
+<div class="card p-3 text-center shadow-sm">
+
+<h4>Room Allocation</h4>
+
+<a href="/add_student" class="btn btn-dark">
+Allocate Room
+</a>
+
+</div>
+
+</div>
+
+
+
+
+<div class="col-md-4">
+
+<div class="card p-3 text-center shadow-sm">
+
+<h4>Attendance</h4>
+
+<a href="/attendance" class="btn btn-info">
+Mark Attendance
+</a>
+
+</div>
+
+</div>
+
+
+
+
+{% endif %}
+
+
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+</body>
+
+</html>
